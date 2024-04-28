@@ -1,0 +1,29 @@
+{
+  "name": "cinema-bot",
+  "version": "1.0.0",
+  "description": "Cinema quiz bot",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon src/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/Chivirda/cinema-bot.git"
+  },
+  "keywords": [
+    "cinema"
+  ],
+  "author": "Sergey Chivirda",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Chivirda/cinema-bot/issues"
+  },
+  "homepage": "https://github.com/Chivirda/cinema-bot#readme",
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "nodemon": "^3.1.0",
+    "telegraf": "^4.16.3"
+  }
+}
