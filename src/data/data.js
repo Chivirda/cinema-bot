@@ -9,7 +9,19 @@ export class Data {
     tables() {
         this.db.all("SELECT name FROM sqlite_schema WHERE type = 'table' AND name NOT LIKE 'sqlite_%'", [], (err, rows) => {
             if (err) console.error(err);
-            console.log(rows);
+            
+        });
+    }
+    
+    // New method to get all customers
+    getAllCustomers(callback) {
+        this.db.all("SELECT * FROM customers", [], (err, rows) => {
+            if (err) {
+                console.error(err);
+                callback(err, null);
+            } else {
+                callback(null, rows);
+            }
         });
     }
 
