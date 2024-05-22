@@ -1,7 +1,7 @@
 import sqlite3 from "sqlite3";
 
 export class Data {
-    db = new sqlite3.Database("src/data/chinook.db", err => {
+    db = new sqlite3.Database("src/data/cinema.db", err => {
         if (err) console.error(err);
         console.log("Connected to SQLite database");
     });
