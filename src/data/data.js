@@ -6,10 +6,10 @@ export class Data {
         console.log("Connected to SQLite database");
     });
 
-    tables() {
+    tables(callback) {
         this.db.all("SELECT name FROM sqlite_schema WHERE type = 'table' AND name NOT LIKE 'sqlite_%'", [], (err, rows) => {
             if (err) console.error(err);
-            
+            callback(null, rows);
         });
     }
     
@@ -22,13 +22,6 @@ export class Data {
             } else {
                 callback(null, rows);
             }
-        });
-    }
-
-    customers() {
-        this.db.all("SELECT COUNT(CustomerId) FROM customers", [], (err, rows) => {
-            if (err) console.error(err);
-            console.log(rows);
         });
     }
 };

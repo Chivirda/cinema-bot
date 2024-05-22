@@ -22,6 +22,17 @@ class CinemaBot {
                 }
             });
         });
+
+        this.bot.command('db', ctx => {
+            this.data.tables((err, tables) => {
+                if (err) ctx.reply.text('Sorry, there was an error fetching tables.');
+                let message = 'List of Tables:\n\n';
+                tables.forEach(table => {
+                    message += `${table.name}\n`;
+                })
+                ctx.reply(message);
+            });
+        })
         
         this.bot.launch();
     }
